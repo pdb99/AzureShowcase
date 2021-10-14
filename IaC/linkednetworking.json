@@ -1,7 +1,12 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
+    "parameters": {
+        "sourceTag": {
+            "type": "string",
+            "defaultValue": "test"
+        }
+    },
     "functions": [],
     "variables": {},
     "resources": [{
@@ -10,7 +15,8 @@
         "apiVersion": "2020-11-01",
         "location": "[resourceGroup().location]",
         "tags": {
-            "displayName": "Showcase-VN1"
+            "displayName": "Showcase-VN1",
+            "source": "[parameters('sourceTag')]"
         },
         "properties": {
             "addressSpace": {
