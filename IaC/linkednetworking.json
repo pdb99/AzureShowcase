@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "functions": [],
+    "variables": {},
+    "resources": [{
+        "name": "Showcase-VN1",
+        "type": "Microsoft.Network/virtualNetworks",
+        "apiVersion": "2020-11-01",
+        "location": "[resourceGroup().location]",
+        "tags": {
+            "displayName": "Showcase-VN1"
+        },
+        "properties": {
+            "addressSpace": {
+                "addressPrefixes": [
+                    "10.0.0.0/24"
+                ]
+            },
+            "subnets": [
+                {
+                    "name": "Showcase-SN1-1",
+                    "properties": {
+                        "addressPrefix": "10.0.0.0/26"
+                    }
+                },
+                {
+                    "name": "Showcase-SN1-2",
+                    "properties": {
+                        "addressPrefix": "10.0.0.64/26"
+                    }
+                },
+                {
+                    "name": "Showcase-SN1-3",
+                    "properties": {
+                        "addressPrefix": "10.0.0.128/26"
+                    }
+                },
+                {
+                    "name": "Showcase-SN1-4",
+                    "properties": {
+                        "addressPrefix": "10.0.0.192/26"
+                    }
+                }
+            ]
+        }
+    }],
+    "outputs": {}
+}
