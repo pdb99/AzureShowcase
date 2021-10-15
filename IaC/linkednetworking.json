@@ -94,6 +94,46 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Hub-to-VN1",
+        "type": "Microsoft.Network/connections",
+        "apiVersion": "2020-11-01",
+        "dependsOn": [
+            "[resourceId('Microsoft.Network/virtualNetworkGateways', 'Showcase-VN-Hub')]",
+            "[resourceId('Microsoft.Network/localNetworkGateways', 'Showcase-VN1')]"
+        ],
+        "properties": {
+            "virtualNetworkGateway1": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworkGateways', 'Showcase-VN-Hub')]"
+            },
+            "localNetworkGateway2": {
+                "id": "[resourceId('Microsoft.Network/localNetworkGateways', 'Showcase-VN1')]"
+            },
+            "connectionType": "IPsec",
+            "routingWeight": 0,
+            "sharedKey": "sharedkey"
+        }
+    },
+    {
+        "name": "VN1-to-Hub",
+        "type": "Microsoft.Network/connections",
+        "apiVersion": "2020-11-01",
+        "dependsOn": [
+            "[resourceId('Microsoft.Network/virtualNetworkGateways', 'Showcase-VN1')]",
+            "[resourceId('Microsoft.Network/localNetworkGateways', 'Showcase-VN-Hub')]"
+        ],
+        "properties": {
+            "virtualNetworkGateway1": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworkGateways', 'Showcase-VN1')]"
+            },
+            "localNetworkGateway2": {
+                "id": "[resourceId('Microsoft.Network/localNetworkGateways', 'Showcase-VN-Hub')]"
+            },
+            "connectionType": "IPsec",
+            "routingWeight": 0,
+            "sharedKey": "sharedkey"
+        }
     }],
     "outputs": {}
 }
