@@ -21,30 +21,73 @@
         "properties": {
             "addressSpace": {
                 "addressPrefixes": [
-                    "10.0.0.0/24"
+                    "10.0.1.0/24"
                 ]
             },
             "subnets": [
                 {
                     "name": "Showcase-SN1-1",
                     "properties": {
-                        "addressPrefix": "10.0.0.0/26"
+                        "addressPrefix": "10.0.1.0/26"
                     }
                 },
                 {
                     "name": "Showcase-SN1-2",
                     "properties": {
-                        "addressPrefix": "10.0.0.64/26"
+                        "addressPrefix": "10.0.1.64/26"
                     }
                 },
                 {
                     "name": "Showcase-SN1-3",
                     "properties": {
-                        "addressPrefix": "10.0.0.128/26"
+                        "addressPrefix": "10.0.1.128/26"
                     }
                 },
                 {
                     "name": "Showcase-SN1-4",
+                    "properties": {
+                        "addressPrefix": "10.0.1.192/26"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "Showcase-VN-Hub",
+        "type": "Microsoft.Network/virtualNetworks",
+        "apiVersion": "2020-11-01",
+        "location": "[resourceGroup().location]",
+        "tags": {
+            "displayName": "Showcase-VN-Hub",
+            "source": "[parameters('sourceTag')]"
+        },
+        "properties": {
+            "addressSpace": {
+                "addressPrefixes": [
+                    "10.0.0.0/24"
+                ]
+            },
+            "subnets": [
+                {
+                    "name": "Showcase-SN-Hub-1",
+                    "properties": {
+                        "addressPrefix": "10.0.0.0/26"
+                    }
+                },
+                {
+                    "name": "Showcase-SN-Hub-2",
+                    "properties": {
+                        "addressPrefix": "10.0.0.64/26"
+                    }
+                },
+                {
+                    "name": "Showcase-SN-Hub-3",
+                    "properties": {
+                        "addressPrefix": "10.0.0.128/26"
+                    }
+                },
+                {
+                    "name": "Showcase-SN-Hub-4",
                     "properties": {
                         "addressPrefix": "10.0.0.192/26"
                     }
