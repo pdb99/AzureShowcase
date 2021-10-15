@@ -21,4 +21,4 @@ steps:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/pdb99/AzureShowcase/main/IaC/azuredeploy.json'
     deploymentMode: 'Incremental'
-    overrideParameters: 'https://raw.githubusercontent.com/pdb99/AzureShowcase/main/IaC/azuredeploy.parameters.json'
+
